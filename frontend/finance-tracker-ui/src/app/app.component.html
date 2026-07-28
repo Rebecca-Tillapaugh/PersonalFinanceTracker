@@ -1,0 +1,10 @@
+<main class="app-shell">
+  <h1>Personal Finance Tracker</h1>
+  <p>Frontend connected to the backend API.</p>
+
+  <section class="status-card">
+    <h2>Backend status</h2>
+    <p><strong>Status:</strong> {{ status }}</p>
+    <p *ngIf="error" class="error">{{ error }}</p>
+  </section>
+</main>
