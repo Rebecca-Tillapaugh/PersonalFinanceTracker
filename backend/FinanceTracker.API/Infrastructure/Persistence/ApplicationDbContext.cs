@@ -103,5 +103,19 @@ public class ApplicationDbContext : DbContext
                 .HasForeignKey(e => e.CategoryId)
                 .OnDelete(DeleteBehavior.Restrict);
         });
+
+        // Temporary development user
+        modelBuilder.Entity<User>().HasData(
+            new User
+            {
+                Id = Guid.Parse("11111111-1111-1111-1111-111111111111"),
+                FullName = "Development User",
+                Email = "dev@example.com",
+                PasswordHash = "TEMP",
+                Currency = "USD",
+                IsActive = true,
+                CreatedAt = new DateTimeOffset(2026, 1, 1, 0, 0, 0, TimeSpan.Zero)
+            }
+        );
     }
 }
